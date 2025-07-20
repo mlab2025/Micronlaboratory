@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micron Laboratory</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; }
+        header { background-color: #0077cc; color: white; padding: 1rem; text-align: center; }
+        nav { background-color: #eee; padding: 1rem; display: flex; justify-content: center; gap: 1rem; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; }
+        section { padding: 1rem; }
+        .test-search { margin-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+        .contact-icons { position: fixed; top: 50%; right: 10px; display: flex; flex-direction: column; gap: 10px; }
+        .contact-icons a { text-decoration: none; font-size: 24px; }
+        .appointment-form input, .appointment-form textarea { width: 100%; padding: 8px; margin: 5px 0; }
+        .appointment-form button { padding: 10px 20px; background-color: #0077cc; color: white; border: none; }
+        footer { text-align: center; padding: 1rem; background-color: #eee; }
+        .banner { width: 100%; max-height: 350px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Micron Laboratory</h1>
+        <p>D-10, Green Park Main, New Delhi – 110016 | Call/WhatsApp: 8756228441</p>
+    </header>
+
+    <img src="banner.jpg" alt="Banner" class="banner" />
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#payment">Payment</a>
+        <a href="#appointment">Book Appointment</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Micron Laboratory is a trusted diagnostic center offering pathology tests with home sample collection. We focus on accurate reports, timely delivery, and patient-friendly service.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="test-search">
+            <input type="text" id="searchInput" placeholder="Search for a test..." onkeyup="filterTests()" />
+            <table id="testTable">
+                <thead>
+                    <tr><th>Test Name</th><th>Price (INR)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>CBC</td><td>400</td></tr>
+                    <tr><td>TSH</td><td>350</td></tr>
+                    <tr><td>Vitamin D</td><td>1550</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="packages">
+        <h2>Health Check-Up Packages</h2>
+        <ul>
+            <li>Basic Health Package – ₹999</li>
+            <li>Executive Health Package – ₹1999</li>
+            <li>Senior Citizen Package – ₹1499</li>
+        </ul>
+    </section>
+
+    <section id="payment">
+        <h2>Make a Payment</h2>
+        <p>Scan the QR code below to make payment:</p>
+        <img src="dummy_qr_code.png" alt="Payment QR Code" width="200" />
+    </section>
+
+    <section id="appointment">
+        <h2>Book Appointment</h2>
+        <form class="appointment-form">
+            <input type="text" placeholder="Full Name" required />
+            <input type="text" placeholder="Test Name" required />
+            <input type="text" placeholder="Preferred Date" required />
+            <input type="text" placeholder="Phone Number" required />
+            <textarea placeholder="Address for sample collection" rows="3" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="lab-gallery">
+        <h2>Our Lab in Action</h2>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <img src="lab1.jpg" alt="Sample Collection" width="200" />
+                <p>Phlebotomist collecting blood sample</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="lab2.jpg" alt="Lab Equipment" width="200" />
+                <p>Advanced lab testing equipment</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="lab3.jpg" alt="Technician at work" width="200" />
+                <p>Experienced technician analyzing reports</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>📍 D-10, Green Park Main, New Delhi – 110016</p>
+        <p>📞 8756228441</p>
+        <p>📧 <a href="mailto:mdmdm1689@gmail.com">mdmdm1689@gmail.com</a></p>
+    </section>
+
+    <div class="contact-icons">
+        <a href="https://wa.me/918756228441" target="_blank">📱</a>
+        <a href="mailto:mdmdm1689@gmail.com">✉️</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Micron Laboratory. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterTests() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("#testTable tbody tr");
+            rows.forEach(row => {
+                const testName = row.cells[0].textContent.toLowerCase();
+                row.style.display = testName.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
