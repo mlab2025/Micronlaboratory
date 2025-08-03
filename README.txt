@@ -1,0 +1,1 @@
+This is the full version of Drs Choice Path Lab website. Admin login at /admin/ with user: admin, pass: 12345
